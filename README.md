@@ -1,7 +1,6 @@
 # Spree Static Content
 
-[![Build Status](https://travis-ci.org/spree-contrib/spree_static_content.svg?branch=master)](https://travis-ci.org/spree-contrib/spree_static_content)
-[![Code Climate](https://codeclimate.com/github/spree-contrib/spree_static_content/badges/gpa.svg)](https://codeclimate.com/github/spree-contrib/spree_static_content)
+[![Build Status](https://travis-ci.org/reinteractive/spree_static_content.svg?branch=master)](https://travis-ci.org/reinteractive/spree_static_content)
 
 Good, clean content management of pages for Spree. You can use this to:
 
@@ -45,59 +44,29 @@ Finally, toggle the visibility using the 'Visible' checkbox. If it is unchecked,
 ---
 
 ## Installation
+#### We have removed content globalisation due to compatibility issues with the table structure used with the StoreConnect gem.
 
-1. Add these extensions(unfortunately we need them all because of broken dependency on globalize) to your Gemfile with this line:
+1. Add the extension to your Gemfile with this line:
 
   #### Spree >= 3.1
 
   ```ruby
-
-  gem 'globalize', github: 'globalize/globalize'
-  gem 'spree_i18n', github: 'spree-contrib/spree_i18n'
-  gem 'spree_globalize', github: 'spree-contrib/spree_globalize', branch: 'master'
-  gem 'spree_static_content', github: 'spree-contrib/spree_static_content'
+  gem 'spree_static_content', github: 'reinteractive/spree_static_content'
   ```
 
-  #### Spree 3.0 and Spree 2.x
-
-  ```ruby
-  gem 'spree_static_content', github: 'spree-contrib/spree_static_content', branch: 'X-X-stable'
-  ```
-
-  The `branch` option is important: it must match the version of Spree you're using.
-  For example, use `3-0-stable` if you're using Spree `3-0-stable` or any `3.0.x` version.
 
 2. Install the gem using Bundler:
   ```ruby
   bundle install
   ```
 
-3. Install Spree Globalize(if you didn't have it before installing spree_static_content)
-  ```ruby
-  bundle exec rails g spree_globalize:install
-  ```
-
-4. Copy & run migrations
+3. Copy & run migrations
   ```ruby
   bundle exec rails g spree_static_content:install
   ```
 
-5. Restart your server
+4. Restart your server
 
   If your server was running, restart it so that it can find the assets properly.
 
 ---
-
-## Contributing
-
-See corresponding [guidelines][2]
-
----
-
-Copyright (c) 2008-2015 [Peter Berkenbosch][4] and [contributors][5], released under the [New BSD License][6]
-
-[2]: https://github.com/spree-contrib/spree_static_content/blob/master/CONTRIBUTING.md
-[3]: https://github.com/spree-contrib/spree_static_content/issues
-[4]: https://github.com/peterberkenbosch
-[5]: https://github.com/spree-contrib/spree_static_content/graphs/contributors
-[6]: https://github.com/spree-contrib/spree_static_content/blob/master/LICENSE.md
