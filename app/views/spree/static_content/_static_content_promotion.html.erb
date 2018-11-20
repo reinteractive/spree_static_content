@@ -1,0 +1,10 @@
+  <% content_for :promotion do %>
+    <% @promos = Spree::Page.by_store(current_store).where(show_in_promotion: :true) %>
+    <% if @promos.any? %>
+    <div class="promo-sliders">
+        <% @promos.each do |promo| %>
+            <%= raw promo.body %>
+        <% end %>
+    </div>
+    <% end %>
+  <% end %>
